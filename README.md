@@ -1,0 +1,2 @@
+# Dagger2UnitTest
+基于AndroidX的Dagger2,Mockito,DaggerMock,Robolectric,Espresso测试框架配置样例
