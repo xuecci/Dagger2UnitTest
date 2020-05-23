@@ -4,10 +4,9 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.junit.MockitoJUnit;
-import org.mockito.junit.MockitoRule;
 
-import static org.junit.Assert.*;
+import it.cosenonjaviste.daggermock.DaggerMockRule;
+import it.cosenonjaviste.daggermock.InjectFromComponent;
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -17,14 +16,16 @@ import static org.junit.Assert.*;
 public class MockUnitTest {
 
     @Rule
-    public MockitoRule mockitoRule = MockitoJUnit.rule();
+    public final DaggerMockRule<LoginComponent> rule = new DaggerMockRule<>(LoginComponent.class, new LoginModule());
 
     @Mock
     UserManager userManager;
 
+    @InjectFromComponent
+    LoginPresenter loginPresenter;
+
     @Test
     public void testLogin() {
-        LoginPresenter loginPresenter = new LoginPresenter(userManager);
         loginPresenter.login("Ryan","12345");
         Mockito.verify(userManager).performLogin("Ryan","12345");
     }

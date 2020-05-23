@@ -8,7 +8,7 @@ import dagger.Provides;
  * Email: xuecci@gmail.com
  */
 @Module
-public class LoginMudule {
+public class LoginModule {
     @Provides
     public UserManager providerUserManager() {
         return new UserManager();

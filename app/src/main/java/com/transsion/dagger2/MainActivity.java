@@ -3,7 +3,6 @@ package com.transsion.dagger2;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.view.View;
 
 import javax.inject.Inject;
 
@@ -16,16 +15,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        LoginConponent loginConponent = ConponentHolder.getLoginConponent();
-        if (loginConponent == null) {
-            loginConponent = DaggerLoginConponent.builder().build();
+        LoginComponent loginComponent = ComponentHolder.getLoginComponent();
+        if (loginComponent == null) {
+            loginComponent = DaggerLoginComponent.builder().build();
         }
-        loginConponent.inject(MainActivity.this);
-        findViewById(R.id.login).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mLoginPresenter.login("Ryan","123456");
-            }
-        });
+        loginComponent.inject(MainActivity.this);
+        findViewById(R.id.login).setOnClickListener(v -> mLoginPresenter.login("Ryan","123456"));
     }
 }

@@ -24,7 +24,7 @@ import static androidx.test.espresso.matcher.ViewMatchers.withId;
 @Config(sdk = 28)
 public class Dagger2UnitTest {
 
-    @Rule public final DaggerMockRule<LoginConponent> rule = new DaggerMockRule<>(LoginConponent.class, new LoginMudule()).set(ConponentHolder::setLoginConponent);;
+    @Rule public final DaggerMockRule<LoginComponent> rule = new DaggerMockRule<>(LoginComponent.class, new LoginModule()).set(ComponentHolder::setLoginComponent);
 
     @Mock
     UserManager userManager;
