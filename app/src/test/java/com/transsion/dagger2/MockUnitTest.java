@@ -9,9 +9,6 @@ import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
 
-import it.cosenonjaviste.daggermock.DaggerMockRule;
-import it.cosenonjaviste.daggermock.InjectFromComponent;
-
 /**
  * Example local unit test, which will execute on the development machine (host).
  *
