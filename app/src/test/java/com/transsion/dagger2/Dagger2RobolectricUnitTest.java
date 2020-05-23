@@ -22,7 +22,7 @@ import static androidx.test.espresso.matcher.ViewMatchers.withId;
  */
 @RunWith(AndroidJUnit4.class)
 @Config(sdk = 28)
-public class Dagger2UnitTest {
+public class Dagger2RobolectricUnitTest {
 
     @Rule public final DaggerMockRule<LoginComponent> rule = new DaggerMockRule<>(LoginComponent.class, new LoginModule()).set(ComponentHolder::setLoginComponent);
 
