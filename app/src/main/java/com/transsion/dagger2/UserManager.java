@@ -1,5 +1,6 @@
 package com.transsion.dagger2;
 
+import android.content.Intent;
 import android.util.Log;
 
 /**
@@ -7,10 +8,10 @@ import android.util.Log;
  * Email: xuecci@gmail.com
  */
 public class UserManager {
-    public UserManager() {
-    }
 
     public void performLogin(String name, String pwd) {
         Log.d(name,pwd);
     }
+
+    public void startActivity(Intent intent) {};
 }

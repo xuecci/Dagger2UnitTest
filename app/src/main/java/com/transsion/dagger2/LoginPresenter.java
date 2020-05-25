@@ -1,5 +1,7 @@
 package com.transsion.dagger2;
 
+import android.content.Intent;
+
 import javax.inject.Inject;
 
 /**
@@ -18,5 +20,8 @@ public class LoginPresenter {
     public void login(String name, String pwd) {
         //some code ...
         mUserManager.performLogin(name,pwd);
+
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        mUserManager.startActivity(intent);
     }
 }
